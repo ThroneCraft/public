@@ -2,7 +2,7 @@
 name: Bug report (spells)
 about: Create a report in regards to MagicSpells
 title: ''
-labels: bug spells
+labels: bug, spells
 
 ---
 
