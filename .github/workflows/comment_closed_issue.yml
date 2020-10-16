@@ -14,7 +14,7 @@ jobs:
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
-          issue-number: ${{ event.issues.issue_number }}
+          issue-number: ${{ github.event.issues.issue_number }}
           body: |
             Your issue has been closed. This likely means that we have implemented a fix. It is possible that it takes a while before you notice any changes. This is due to the fact that we first internally test the implementation. So please be patient if you do not notice any change immediately. 
             
