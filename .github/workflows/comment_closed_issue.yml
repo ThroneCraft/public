@@ -16,6 +16,5 @@ jobs:
         with:
           type: create
           token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            Your issue has been closed. This likely means that we have implemented a fix. It is possible that it takes a while before you notice any changes. This is due to the fact that we first internally test the implementation. So please be patient if you do not notice any change immediately! Thank you for understanding!
+          body: "Your issue has been closed. This likely means that we have implemented a fix. It is possible that it takes a while before you notice any changes. This is due to the fact that we first internally test the implementation. So please be patient if you do not notice any change immediately! Thank you for understanding!"
           issue_number: ${{ github.event.issue.issue_number }}
