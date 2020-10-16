@@ -1,0 +1,21 @@
+name: Notify user of closed issue
+
+on:
+  issues:
+    types: [ closed ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Comment on closed issue
+        uses: JungWinter/comment@v1.1.0
+        with:
+          type: create
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Your issue has been closed. This likely means that we have implemented a fix. It is possible that it takes a while before you notice any changes. This is due to the fact that we first internally test the implementation. So please be patient if you do not notice any change immediately! Thank you for understanding!
+          issue_number: ${{ github.event.issue.issue_number }}
