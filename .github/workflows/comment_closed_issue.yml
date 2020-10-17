@@ -4,20 +4,26 @@ on:
   issues:
     types: [ closed ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  comment:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Debug Action
-        uses: hmarr/debug-action@v1.0.0
-      - name: Create comment
+      - name: Create comment (bug)
+        if: contains(github.event.issue.labels.*.name, 'bug') && contains(github.event.issue.labels.*.name, 'wontfix') == false
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
             Your issue has been closed. This likely means that we have implemented a fix. It is possible that it takes a while before you notice any changes. This is due to the fact that we first internally test the implementation. So please be patient if you do not notice any change immediately. 
+            
+            Thank you for understanding.
+      - name: Create comment (feature)
+        if: contains(github.event.issue.labels.*.name, 'bug') && contains(github.event.issue.labels.*.name, 'wontfix') == false
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Your feature request has been closed. This likely means that we have implemented your suggestion. It is possible that it takes a while before you notice any changes. This is due to the fact that we first internally test the implementation. So please be patient if you do not notice any change immediately. 
             
             Thank you for understanding.
