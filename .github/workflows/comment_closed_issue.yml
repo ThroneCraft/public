@@ -27,3 +27,12 @@ jobs:
             Your feature request has been closed. This likely means that we have implemented your suggestion. It is possible that it takes a while before you notice any changes. This is due to the fact that we first internally test the implementation. So please be patient if you do not notice any change immediately. 
             
             Thank you for understanding.
+      - name: Create comment (feature)
+        if: contains(github.event.issue.labels.*.name, 'wontfix')
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Your report has been closed and marked as `wontfix`. This likely means that we did not have enough information or it is something we can not do. Sorry for any inconvenience.
+            
+            Thank you for understanding.
