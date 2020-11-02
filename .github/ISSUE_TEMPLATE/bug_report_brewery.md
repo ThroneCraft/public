@@ -1,14 +1,14 @@
 ---
 name: Bug report (brewery)
-about: Create a report in regards to MagicSpells
+about: Create a report in regards to Brewery
 title: ''
-labels: bug, spells
+labels: bug, brewery
 assignees: FinnJp
 
 ---
 
-**Affected spells:**
-Please mention which recipe(s) is/are affected.
+**Affected recipes:**
+Please mention which recipe(s) is/are affected. If this issue affects all recipes please remove this section.
 
 **Describe the issue**
 
