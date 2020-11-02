@@ -1,5 +1,5 @@
 ---
-name: Bug report (spells)
+name: Bug report (brewery)
 about: Create a report in regards to MagicSpells
 title: ''
 labels: bug, spells
