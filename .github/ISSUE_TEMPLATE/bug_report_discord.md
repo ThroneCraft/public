@@ -2,7 +2,7 @@
 name: Bug report (Discord)
 about: Create a report in regards to Discord.
 title: ''
-labels: bug, discord
+labels: bug, Discord
 assignees: jvdoorn
 
 ---
